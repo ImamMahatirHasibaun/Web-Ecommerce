@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HCI Project</title>
+    <link rel="stylesheet" href="ProductDetailPage.css"/>
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lexend+Giga:wght@100..900&family=Lobster&family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+     <!-- Navbar -->
+    <header>
+        <nav class="navbar">
+            <a class="Logo">Christian<span>Wijayaㅤ</span></a>
+            
+            <div class="navbar-nav">
+                <a href="HomePage.html">Home</a>
+                <a href="ProductPage.html">Product</a>
+                <a href="EventPage.html">Event</a>
+                <a href="AboutPage.html">About</a>
+            </div>
+            
+            <div class="navbar-ekstra">
+                <!-- Cart Icon -->
+                <div href="CartPage.html" class="cart-icon" id="cart-icon">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count" id="cart-count">0</span>
+                </div>
+            </div>
+            
+            <div class="menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Cart Notification -->
+    <div class="cart-notification" id="cart-notification">
+        Item added to cart!
+    </div>
+
+    <!-- Product Detail Content -->
+    <div class="product-detail-container">
+        <div class="product-image-container">
+            <img id="product-main-image" src="" alt="Product Image" class="product-main-image">
+        </div>
+        
+        <div class="product-detail-info">
+            <h1 id="product-detail-title" class="product-detail-title"></h1>
+            <p id="product-detail-price" class="product-detail-price"></p>
+            <p id="product-detail-description" class="product-detail-description"></p>
+            
+            <div class="product-options">
+                <label class="option-label">Size</label>
+                <div class="size-options">
+                    <div class="size-option" data-size="S">S</div>
+                    <div class="size-option" data-size="M">M</div>
+                    <div class="size-option" data-size="L">L</div>
+                    <div class="size-option" data-size="XL">XL</div>
+                </div>
+                
+                <label class="option-label">Quantity</label>
+                <div class="quantity-selector">
+                    <div class="quantity-btn minus-btn">-</div>
+                    <input type="number" class="quantity-input" value="1" min="1" max="10">
+                    <div class="quantity-btn plus-btn">+</div>
+                </div>
+            </div>
+            
+            <button class="add-to-cart-detail">
+                <i class="fas fa-cart-plus"></i> Add to Cart
+            </button>
+            <button class="buy-now-detail">Buy Now</button>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-section">
+                <h2 class="brand-name">Christian Wijayaㅤ</h2>
+                <p class="brand-description">
+                    A luxury fashion house dedicated to timeless elegance and modern sophistication. Making customers more attractive, neat and graceful.
+                </p>
+            </div>
+    
+            <div class="footer-section">
+                <h3 class="footer-title">Find Us On</h3>
+                <ul class="footer-links">
+                    <li>
+                        <a href="#"><img src="asset/instagram.svg" alt="Instagram"></a>
+                    </li>
+                    <li>
+                        <a href="#"><img src="asset/facebook.svg" alt="Facebook"></a>
+                    </li>
+                    <li>
+                        <a href="#"><img src="asset/twitter-x.svg" alt="Twitter"></a>
+                    </li>
+                    <li>
+                        <a href="#"><img src="asset/tiktok.svg" alt="TikTok"></a>
+                    </li>
+                </ul>
+            </div>
+    
+            <div class="footer-section">
+                <h3 class="footer-title">Contact</h3>
+                <div class="contact-info">
+                    <span>Jakarta Design Tower</span>
+                </div>
+                <div class="contact-info">
+                    <span>Sudirman Business District</span>
+                </div>
+                <div class="contact-info">
+                    <span>Jakarta, Indonesia</span>
+                </div>
+                <div class="contact-info">
+                    <span>contact@christianwijaya.com</span>
+                </div>
+                <div class="contact-info">
+                    <span>+62 21 5678 9000</span>
+                </div>
+            </div>
+        </div>
+    
+        <div class="footer-container footer-bottom">
+            <p>&copy; 2025 Christian Wijaya. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Menu toggle for mobile
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navbarNav = document.querySelector('.navbar-nav');
+        
+        menuToggle.addEventListener('click', function() {
+            navbarNav.classList.toggle('active');
+        });
+        
+        // Close menu when clicking outside
+        document.addEventListener('click', function(e) {
+            if (!menuToggle.contains(e.target) && !navbarNav.contains(e.target)) {
+                navbarNav.classList.remove('active');
+            }
+        });
+
+        // Cart functionality
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+        updateCartCount();
+
+        // Cart icon click - navigate to cart page
+        document.getElementById('cart-icon').addEventListener('click', function() {
+            window.location.href = 'CartPage.html';
+        });
+
+        // Function to update cart count
+        function updateCartCount() {
+            const cartCount = document.getElementById('cart-count');
+            const itemCount = cart.reduce((total, item) => total + item.quantity, 0);
+            cartCount.textContent = itemCount;
+        }
+
+        // Function to show notification
+        function showNotification() {
+            const notification = document.getElementById('cart-notification');
+            notification.classList.add('show');
+            
+            setTimeout(() => {
+                notification.classList.remove('show');
+            }, 2000);
+        }
+
+        // Product Detail Page Specific Script
+        document.addEventListener('DOMContentLoaded', function() {
+            // Get product details from localStorage
+            const productDetails = JSON.parse(localStorage.getItem('selectedProduct'));
+            
+            if (productDetails) {
+                // Populate the product details
+                document.getElementById('product-main-image').src = productDetails.image;
+                document.getElementById('product-detail-title').textContent = productDetails.title;
+                document.getElementById('product-detail-price').textContent = productDetails.price;
+                document.getElementById('product-detail-description').textContent = productDetails.description;
+                
+                // Set the page title
+                document.title = productDetails.title + " - Christian Wijaya";
+            } else {
+                // Redirect back to products page if no product is selected
+                window.location.href = 'ProductPage.html';
+            }
+            
+            // Size selection
+            const sizeOptions = document.querySelectorAll('.size-option');
+            sizeOptions.forEach(option => {
+                option.addEventListener('click', function() {
+                    // Remove selected class from all options
+                    sizeOptions.forEach(opt => opt.classList.remove('selected'));
+                    // Add selected class to clicked option
+                    this.classList.add('selected');
+                });
+            });
+            
+            // Quantity selector
+            const minusBtn = document.querySelector('.minus-btn');
+            const plusBtn = document.querySelector('.plus-btn');
+            const quantityInput = document.querySelector('.quantity-input');
+            
+            minusBtn.addEventListener('click', function() {
+                let currentValue = parseInt(quantityInput.value);
+                if (currentValue > 1) {
+                    quantityInput.value = currentValue - 1;
+                }
+            });
+            
+            plusBtn.addEventListener('click', function() {
+                let currentValue = parseInt(quantityInput.value);
+                if (currentValue < 10) {
+                    quantityInput.value = currentValue + 1;
+                }
+            });
+            
+            // Add to cart button
+            const addToCartButton = document.querySelector('.add-to-cart-detail');
+            addToCartButton.addEventListener('click', function() {
+                // Get selected size
+                const selectedSize = document.querySelector('.size-option.selected');
+                if (!selectedSize) {
+                    alert('Please select a size');
+                    return;
+                }
+                
+                const size = selectedSize.getAttribute('data-size');
+                const quantity = parseInt(quantityInput.value);
+                
+                // Create a unique ID for the product with size
+                const productWithSizeId = productDetails.id + '-' + size;
+                
+                // Check if product already in cart
+                const existingItemIndex = cart.findIndex(item => item.id === productWithSizeId);
+                
+                if (existingItemIndex !== -1) {
+                    cart[existingItemIndex].quantity += quantity;
+                } else {
+                    cart.push({
+                        id: productWithSizeId,
+                        name: productDetails.title,
+                        price: parseFloat(productDetails.price.replace(/[^\d]/g, '')),
+                        image: productDetails.image,
+                        size: size,
+                        quantity: quantity
+                    });
+                }
+                
+                // Save cart to localStorage
+                localStorage.setItem('cart', JSON.stringify(cart));
+                
+                // Update cart count
+                updateCartCount();
+                
+                // Show notification
+                showNotification();
+            });
+            
+            // Buy now button
+            const buyNowButton = document.querySelector('.buy-now-detail');
+            buyNowButton.addEventListener('click', function() {
+                // Get selected size
+                const selectedSize = document.querySelector('.size-option.selected');
+                if (!selectedSize) {
+                    alert('Please select a size');
+                    return;
+                }
+                
+                const size = selectedSize.getAttribute('data-size');
+                const quantity = parseInt(quantityInput.value);
+                
+                // Create a temporary order object
+                const order = {
+                    product: productDetails,
+                    size: size,
+                    quantity: quantity
+                };
+                
+                // Save the order to localStorage
+                localStorage.setItem('currentOrder', JSON.stringify(order));
+                
+                // Redirect to checkout page (you would need to create this)
+                window.location.href = 'Checkout.html';
+            });
+        });
+
+    </script>
+
+    
+    </body>
+    </html>

@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HCI Project</title>
+    <link rel="stylesheet" href="Product.css"/>
+    <script src="ProductPage.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lexend+Giga:wght@100..900&family=Lobster&family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+      <!-- Navbar -->
+      <header>
+        <nav class="navbar">
+            <a class="Logo">Christian<span>Wijayaㅤ</span></a>
+            
+            <div class="navbar-nav">
+                <a href="HomePage.html">Home</a>
+                <a href="ProductPage.html">Product</a>
+                <a href="EventPage.html">Event</a>
+                <a href="AboutPage.html">About</a>
+            </div>
+            
+            <div class="navbar-ekstra">
+                <div class="search-container">
+                    <input type="text" id="search-input" placeholder="Search..." />
+                    <button id="search-btn" type="button">
+                        <img src="asset/search.svg" alt="" class="nav-search">
+                    </button>
+                </div>
+                <!-- Cart Icon -->
+                <div href="CartPage.html" class="cart-icon" id="cart-icon">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count" id="cart-count">0</span>
+                </div>
+            </div>
+            
+            <div class="menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Cart Notification -->
+    <div class="cart-notification" id="cart-notification">
+        Item added to cart!
+    </div>
+
+    <main>
+        <!-- Product Filter Bar -->
+        <nav class="filterproduct">
+            <a class="namapage">Product</a>
+            <div class="bar-filterproduct">
+                <a href="#" data-category="All" class="active">
+                    <i class="fas fa-th"></i>
+                    All
+                </a>
+                <a href="#" data-category="Clothing">
+                    <i class="fas fa-tshirt"></i>
+                    Clothing
+                </a>
+                <a href="#" data-category="Accessories">
+                    <i class="fas fa-gem"></i>
+                    Accessories
+                </a>
+                <a href="#" data-category="Footwear">
+                    <i class="fas fa-shoe-prints"></i>
+                    Footwear
+                </a>
+            </div>
+        </nav>
+
+        <!-- Product Grid -->
+        <div class="product-grid">
+            <!-- Clothing Products -->
+            <div class="product-card" data-category="Clothing">
+                <img src="asset/Clothing1.webp" alt="Levi's Shirt" class="product-image1">
+                <div class="product-info">
+                    <h2 class="product-title">Levi's</h2>
+                    <p class="product-price">Rp 224.000</p>
+                    <p class="product-description">Levi's® Men's Short-Sleeve Classic Standard Fit Shirt (86627-0218).</p>
+                    <button href="ProductDetailPage.html" class="buy-button">Beli Sekarang</button>
+                    <button class="add-to-cart" data-id="1" data-name="Levi's Shirt" data-price="224000" data-image="asset/Clothing1.webp">
+                        <i class="fas fa-cart-plus"></i> Add to Cart
+                    </button>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="Clothing">
+                <img src="asset/Clothing2.webp" alt="H&M Shirt" class="product-image3">
+                <div class="product-info">
+                    <h2 class="product-title">H&M</h2>
+                    <p class="product-price">Rp 360.000</p>
+                    <p class="product-description">Miles reg ls solid oxford shir.</p>
+                    <button href="ProductDetailPage.html" class="buy-button">Beli Sekarang</button>
+                    <button class="add-to-cart" data-id="2" data-name="H&M Shirt" data-price="360000" data-image="asset/Clothing2.webp">
+                        <i class="fas fa-cart-plus"></i> Add to Cart
+                    </button>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="Clothing">
+                <img src="asset/etalase1.webp" alt="Calvin Klein Shirt" class="product-image1">
+                <div class="product-info">
+                    <h2 class="product-title">Calvin Klein</h2>
+                    <p class="product-price">Rp 2.199.000</p>
+                    <p class="product-description">Calvin Klein Jeans - Check Shirt - Black.</p>
+                    <button href="ProductDetailPage.html" class="buy-button">Beli Sekarang</button>
+                    <button class="add-to-cart" data-id="3" data-name="Calvin Klein Shirt" data-price="2199000" data-image="asset/etalase1.webp">
+                        <i class="fas fa-cart-plus"></i> Add to Cart
+                    </button>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="Clothing">
+                <img src="asset/etalase3.jpg" alt="MANGO Man Shirt" class="product-image3">
+                <div class="product-info">
+                    <h2 class="product-title">MANGO Man</h2>
+                    <p class="product-price">Rp 399.000</p>
+                    <p class="product-description">Classic-Fit Micro-Corduroy Shirt.</p>
+                    <button href="ProductDetailPage.html" class="buy-button">Beli Sekarang</button>
+                    <button class="add-to-cart" data-id="4" data-name="MANGO Man Shirt" data-price="399000" data-image="asset/etalase3.jpg">
+                        <i class="fas fa-cart-plus"></i> Add to Cart
+                    </button>
+                </div>
+            </div>
+
+            <!-- Accessories Products -->
+            <div class="product-card" data-category="Accessories">
+                <img src="asset/Accecories1.webp" alt="Converse Cap" class="product-image2">
+                <div class="product-info">
+                    <h2 class="product-title">Converse</h2>
+                    <p class="product-price">Rp 299.000</p>
+                    <p class="product-description">Day One Cp Cap.</p>
+                    <button href="ProductDetailPage.html" class="buy-button">Beli Sekarang</button>
+                    <button class="add-to-cart" data-id="5" data-name="Converse Cap" data-price="299000" data-image="asset/Accecories1.webp">
+                        <i class="fas fa-cart-plus"></i> Add to Cart
+                    </button>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="Accessories">
+                <img src="asset/Accecories2.webp" alt="Nike Cap" class="product-image4">
+                <div class="product-info">
+                    <h2 class="product-title">Nike</h2>
+                    <p class="product-price">Rp 269.000</p>
+                    <p class="product-description">Dri-FIT Club Structured Swoosh Cap.</p>
+                    <button href="ProductDetailPage.html" class="buy-button">Beli Sekarang</button>
+                    <button class="add-to-cart" data-id="6" data-name="Nike Cap" data-price="269000" data-image="asset/Accecories2.webp">
+                        <i class="fas fa-cart-plus"></i> Add to Cart
+                    </button>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="Accessories">
+                <img src="asset/Accecories3.webp" alt="BOTTEGA VENETA Sunglasses" class="product-image2">
+                <div class="product-info">
+                    <h2 class="product-title">BOTTEGA VENETA</h2>
+                    <p class="product-price">Rp 5.300.000</p>
+                    <p class="product-description">Aviator Sunglasses (nt).</p>
+                    <button href="ProductDetailPage.html" class="buy-button">Beli Sekarang</button>
+                    <button class="add-to-cart" data-id="7" data-name="BOTTEGA VENETA Sunglasses" data-price="5300000" data-image="asset/Accecories3.webp">
+                        <i class="fas fa-cart-plus"></i> Add to Cart
+                    </button>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="Accessories">
+                <img src="asset/Accecories4.webp" alt="BOTTEGA VENETA Classic Sunglasses" class="product-image4">
+                <div class="product-info">
+                    <h2 class="product-title">BOTTEGA VENETA</h2>
+                    <p class="product-price">Rp 5.359.000</p>
+                    <p class="product-description">Classic Sunglasses (nt).</p>
+                    <button href="ProductDetailPage.html" class="buy-button">Beli Sekarang</button>
+                    <button class="add-to-cart" data-id="8" data-name="BOTTEGA VENETA Classic Sunglasses" data-price="5359000" data-image="asset/Accecories4.webp">
+                        <i class="fas fa-cart-plus"></i> Add to Cart
+                    </button>
+                </div>
+            </div>
+
+            <!-- Footwear Products -->
+            <div class="product-card" data-category="Footwear">
+                <img src="asset/Footwear1.webp" alt="MLB Korea Shoes" class="product-image1">
+                <div class="product-info">
+                    <h2 class="product-title">MLB Korea</h2>
+                    <p class="product-price">Rp 2.300.000</p>
+                    <p class="product-description">Chunky Liner - NY Black.</p>
+                    <button href="ProductDetailPage.html" class="buy-button">Beli Sekarang</button>
+                    <button class="add-to-cart" data-id="9" data-name="MLB Korea Shoes" data-price="2300000" data-image="asset/Footwear1.webp">
+                        <i class="fas fa-cart-plus"></i> Add to Cart
+                    </button>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="Footwear">
+                <img src="asset/Footwear2.webp" alt="MLB Korea Shoes" class="product-image2">
+                <div class="product-info">
+                    <h2 class="product-title">MLB Korea</h2>
+                    <p class="product-price">Rp 299.000</p>
+                    <p class="product-description">Bigball Chunky A - NY Ivory.</p>
+                    <button href="ProductDetailPage.html" class="buy-button">Beli Sekarang</button>
+                    <button class="add-to-cart" data-id="10" data-name="MLB Korea Bigball Shoes" data-price="299000" data-image="asset/Footwear2.webp">
+                        <i class="fas fa-cart-plus"></i> Add to Cart
+                    </button>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="Footwear">
+                <img src="asset/Footwear3.webp" alt="Nike Sneakers" class="product-image3">
+                <div class="product-info">
+                    <h2 class="product-title">Nike</h2>
+                    <p class="product-price">Rp 799.000</p>
+                    <p class="product-description">Court Vision Low Next Nature Sneakers.</p>
+                    <button href="ProductDetailPage.html" class="buy-button">Beli Sekarang</button>
+                    <button class="add-to-cart" data-id="11" data-name="Nike Sneakers" data-price="799000" data-image="asset/Footwear3.webp">
+                        <i class="fas fa-cart-plus"></i> Add to Cart
+                    </button>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="Footwear">
+                <img src="asset/Footwear4.webp" alt="Nike Shoes" class="product-image4">
+                <div class="product-info">
+                    <h2 class="product-title">Nike</h2>
+                    <p class="product-price">Rp 779.400</p>
+                    <p class="product-description">Court Legacy Lift Shoes.</p>
+                    <button href="ProductDetailPage.html" class="buy-button">Beli Sekarang</button>
+                    <button class="add-to-cart" data-id="12" data-name="Nike Court Legacy Shoes" data-price="779400" data-image="asset/Footwear4.webp">
+                        <i class="fas fa-cart-plus"></i> Add to Cart
+                    </button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-section">
+                <h2 class="brand-name">Christian Wijayaㅤ</h2>
+                <p class="brand-description">
+                    A luxury fashion house dedicated to timeless elegance and modern sophistication. Making customers more attractive, neat and graceful.
+                </p>
+            </div>
+    
+            <div class="footer-section">
+                <h3 class="footer-title">Find Us On</h3>
+                <ul class="footer-links">
+                    <li>
+                        <a href="#"><img src="asset/instagram.svg" alt="Instagram"></a>
+                    </li>
+                    <li>
+                        <a href="#"><img src="asset/facebook.svg" alt="Facebook"></a>
+                    </li>
+                    <li>
+                        <a href="#"><img src="asset/twitter-x.svg" alt="Twitter"></a>
+                    </li>
+                    <li>
+                        <a href="#"><img src="asset/tiktok.svg" alt="TikTok"></a>
+                    </li>
+                </ul>
+            </div>
+    
+            <div class="footer-section">
+                <h3 class="footer-title">Contact</h3>
+                <div class="contact-info">
+                    <span>Jakarta Design Tower</span>
+                </div>
+                <div class="contact-info">
+                    <span>Sudirman Business District</span>
+                </div>
+                <div class="contact-info">
+                    <span>Jakarta, Indonesia</span>
+                </div>
+                <div class="contact-info">
+                    <span>contact@christianwijaya.com</span>
+                </div>
+                <div class="contact-info">
+                    <span>+62 21 5678 9000</span>
+                </div>
+            </div>
+        </div>
+    
+        <div class="footer-container footer-bottom">
+            <p>&copy; 2025 Christian Wijaya. All rights reserved.</p>
+        </div>
+    </footer>
+
+    
+    </body>
+    </html>

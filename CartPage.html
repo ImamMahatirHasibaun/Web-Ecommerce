@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart - Christian Wijaya</title>
+    <link rel="stylesheet" href="CartPage.css"/>
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lexend+Giga:wght@100..900&family=Lobster&family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <script src="CartPage.js"></script>
+</head>
+<body>
+    <!-- Navbar -->
+    <header>
+        <nav class="navbar">
+            <a class="Logo">Christian<span>Wijayaㅤ</span></a>
+            
+            <div class="navbar-nav">
+                <a href="HomePage.html">Home</a>
+                <a href="ProductPage.html">Product</a>
+                <a href="EventPage.html">Event</a>
+                <a href="AboutPage.html">About</a>
+            </div>
+            
+            <div class="navbar-ekstra">
+                <div class="search-container">
+                    <input type="text" id="cart-search-input" placeholder="Search in cart..." />
+                    <button id="cart-search-btn" type="button">
+                        <img src="asset/search.svg" alt="" class="nav-search">
+                    </button>
+                </div>
+                <!-- Cart Icon -->
+                <div href="CartPage.html" class="cart-icon" id="cart-icon">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count" id="cart-count">0</span>
+                </div>
+            </div>
+            
+            <div class="menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="cart-container">
+            <h1 class="cart-title">Shopping Cart</h1>
+            
+            <!-- Cart Items -->
+            <div class="cart-content">
+                <div class="cart-header">
+                    <div class="header-product">Product</div>
+                    <div class="header-price">Price</div>
+                    <div class="header-quantity">Quantity</div>
+                    <div class="header-total">Total</div>
+                    <div class="header-action">Action</div>
+                </div>
+                
+                <div class="cart-items">
+                    <!-- Cart items will be inserted here by JavaScript -->
+                    <div class="cart-item">
+                        <div class="cart-item-title">Nama Produk</div>
+                        <!-- elemen lain -->
+                    </div>
+                </div>
+                
+                <div class="empty-cart-message" style="display: none;">
+                    <p>Your cart is empty.</p>
+                    <a href="ProductPage.html" class="continue-shopping-btn">Continue Shopping</a>
+                </div>
+            </div>
+            
+            <!-- Cart Summary -->
+            <div class="cart-summary">
+                <h2>Order Summary</h2>
+                <div class="summary-row">
+                    <span>Subtotal</span>
+                    <span class="subtotal-amount">Rp 0</span>
+                </div>
+                <div class="summary-row">
+                    <span>Tax (10%)</span>
+                    <span class="tax-amount">Rp 0</span>
+                </div>
+                <div class="summary-row total">
+                    <span>Total</span>
+                    <span class="total-amount">Rp 0</span>
+                </div>
+                <div class="cart-buttons">
+                    <button class="clear-cart-btn">Clear Cart</button>
+                    <button class="continue-shopping-btn">Continue Shopping</button>
+                    <button class="checkout-btn">Checkout</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-section">
+                <h2 class="brand-name">Christian Wijayaㅤ</h2>
+                <p class="brand-description">
+                    A luxury fashion house dedicated to timeless elegance and modern sophistication. Making customers more attractive, neat and graceful.
+                </p>
+            </div>
+    
+            <div class="footer-section">
+                <h3 class="footer-title">Find Us On</h3>
+                <ul class="footer-links">
+                    <li>
+                        <a href="#"><img src="asset/instagram.svg" alt="Instagram"></a>
+                    </li>
+                    <li>
+                        <a href="#"><img src="asset/facebook.svg" alt="Facebook"></a>
+                    </li>
+                    <li>
+                        <a href="#"><img src="asset/twitter-x.svg" alt="Twitter"></a>
+                    </li>
+                    <li>
+                        <a href="#"><img src="asset/tiktok.svg" alt="TikTok"></a>
+                    </li>
+                </ul>
+            </div>
+    
+            <div class="footer-section">
+                <h3 class="footer-title">Contact</h3>
+                <div class="contact-info">
+                    <span>Jakarta Design Tower</span>
+                </div>
+                <div class="contact-info">
+                    <span>Sudirman Business District</span>
+                </div>
+                <div class="contact-info">
+                    <span>Jakarta, Indonesia</span>
+                </div>
+                <div class="contact-info">
+                    <span>contact@christianwijaya.com</span>
+                </div>
+                <div class="contact-info">
+                    <span>+62 21 5678 9000</span>
+                </div>
+            </div>
+        </div>
+    
+        <div class="footer-container footer-bottom">
+            <p>&copy; 2025 Christian Wijaya. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
+
+
