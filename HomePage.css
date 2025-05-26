@@ -228,7 +228,7 @@
         display: block;
         margin: 1.5rem 0;
         padding: 0.5rem;
-        font-size: 1.6rem; /* Besar di mobile */
+        font-size: 1.2rem;
     }
     .navbar-ekstra input {
         width: 120px;
