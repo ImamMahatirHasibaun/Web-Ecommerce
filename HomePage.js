@@ -54,9 +54,16 @@ document.addEventListener('DOMContentLoaded', function() {
     const navbarNav = document.querySelector('.navbar-nav');
     
     if (menuToggle && navbarNav) {
-        menuToggle.addEventListener('click', function() {
+        menuToggle.addEventListener('click', function(e) {
+            e.stopPropagation();
             navbarNav.classList.toggle('active');
             menuToggle.classList.toggle('active');
+        });
+        document.addEventListener('click', function(e) {
+            if (!menuToggle.contains(e.target) && !navbarNav.contains(e.target)) {
+                navbarNav.classList.remove('active');
+                menuToggle.classList.remove('active');
+            }
         });
     }
     

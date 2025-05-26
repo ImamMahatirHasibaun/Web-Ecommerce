@@ -97,6 +97,8 @@ body {
     justify-content: space-between;
     height: 20px;
     cursor: pointer;
+    z-index: 11001;
+    position: relative;
 }
 
 .menu-toggle span {
@@ -295,7 +297,6 @@ main {
     .menu-toggle {
         display: flex;
     }
-    
     .navbar-nav {
         position: absolute;
         top: 100%;
@@ -306,30 +307,43 @@ main {
         transition: 0.5s;
         padding: 20px;
         box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+        flex-direction: column;
+        align-items: flex-start;
+        z-index: 10000;
     }
-    
     .navbar-nav.active {
         right: 0;
     }
-    
     .navbar .navbar-nav a {
         display: block;
         margin: 1.5rem 0;
         padding: 0.5rem;
         font-size: 1.2rem;
     }
-    
     .navbar-ekstra input {
         width: 120px;
         font-size: 12px;
     }
-    
     .navbar-ekstra .nav-search {
         width: 16px;
         height: 16px;
     }
-    
-    
+    .product-detail-container {
+        flex-direction: column;
+        gap: 24px;
+    }
+    .product-image-container,
+    .product-detail-info {
+        min-width: 0;
+        width: 100%;
+    }
+    .navbar-ekstra {
+        position: static;
+        z-index: 1;
+    }
+    .menu-toggle {
+        z-index: 11001;
+    }
 }
 
 /* Search bar */
@@ -377,6 +391,8 @@ main {
     justify-content: space-between;
     height: 20px;
     cursor: pointer;
+    z-index: 11001;
+    position: relative;
 }
 
 .menu-toggle span {
@@ -386,6 +402,35 @@ main {
     background-color: #333;
     border-radius: 3px;
     transition: all 0.3s ease;
+}
+
+@media screen and (max-width: 576px) {
+    .menu-toggle {
+        display: flex;
+    }
+    .navbar-nav {
+        position: absolute;
+        top: 100%;
+        right: -100%;
+        background-color: aliceblue;
+        width: 80%;
+        height: 100vh;
+        transition: 0.5s;
+        padding: 20px;
+        box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+        flex-direction: column;
+        align-items: flex-start;
+        z-index: 10000;
+    }
+    .navbar-nav.active {
+        right: 0;
+    }
+    .navbar .navbar-nav a {
+        display: block;
+        margin: 1.5rem 0;
+        padding: 0.5rem;
+        font-size: 1.2rem;
+    }
 }
 
 /* Main content */
